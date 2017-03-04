@@ -6,16 +6,16 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 12:00:13 by dgerard           #+#    #+#             */
-/*   Updated: 2017/02/28 17:42:13 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/02 19:27:19 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			ft_strlen(char *str)
+int			ft_strlen(const char *s)
 {
-	int	c;
-
+	int c;
+	
 	c = 0;
-	while (str[c] != '\0')
+	while (s[c])
 		c++;
 	return (c);
 }

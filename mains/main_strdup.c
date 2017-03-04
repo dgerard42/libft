@@ -6,18 +6,19 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 21:41:53 by dgerard           #+#    #+#             */
-/*   Updated: 2017/02/28 19:26:37 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/02 19:50:51 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		main(int argc, char **argv)
+int		main(void)
 {
-	if (argc == 2)
-	{
-		printf("original string:%s\n", argv[1]);
-		printf("my result:%s\n", ft_strdup(argv[1]));
-		printf("real function results:%s\n", strdup(argv[1]));
-	}
+	const char *s1;
+
+	s1 = "life, the universe, and everything";
+	
+	printf("original string:%s\n", s1);
+	printf("my result:%s\n", ft_strdup(s1));
+	printf("real function results:%s\n", strdup(s1));
 }

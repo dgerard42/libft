@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   main_strcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 21:21:09 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/02 20:56:43 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/03 12:52:11 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/03 13:15:50 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(const char *s1)
+int			main(void)
 {
-	char *new;
-	char *cs1;
-	char *result;
+	const char 	*src;
+	char		*dst;
+	const char	*src2;
+	char		*dst2;
 
-	cs1 = (char *)s1;
-	new = (char *)malloc(sizeof(char) * (ft_strlen(cs1)) + 1);
-	result = new;
-	while (*cs1 != '\0')
-		*new++ = *cs1++;
-	*new = '\0';
-	return (result);
+	src = "show me what u got";
+	dst = "wiuhewiuhewiuheiwuheiwheiw";
+	src2 = "show me what u got";
+	dst2 = "wjeoweugrbejriweurhewkjrgew";
+
+	printf("original strcpy src = %s\n", src);
+	printf("original strcpy dst = %s\n", dst);
+	printf("dst after strcpy = %s\n", strcpy(dst, (const char*)src));	
 }

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_memccpy.c                                     :+:      :+:    :+:   */
+/*   main_memchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/01 18:19:49 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/02 12:16:59 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/02 15:58:53 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/02 16:27:27 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main (void)
+int main ()
 {
-	char dest[] = "Pushkin was born into Russian nobility in Moscow";
-	char src[] = "Alexander Sergeyevich Pushkin";
+   const char str[] = "is there anybody home";
+   const char ch = 'a';
+   char *ret;
 
-	printf("%s\n", memccpy(dest, src, 'y', 9));
-	printf("%s\n", ft_memccpy(dest, src, 'y', 9));
-	printf("%s\n", memccpy(dest, src, 'y', 16));
-	printf("%s\n", ft_memccpy(dest, src, 'y', 16));
+   ret = memchr(str, ch, strlen(str));
+
+   printf("String after |%c| is - |%s|\n", ch, ret);
+   
+   const char str2[] = "is there anybody home";
+   const char ch2 = 'a';
+   char *ret2;
+   
+   ret2 = memchr(str2, ch2, strlen(str2));
+   printf("String after |%c| is - |%s|\n", ch2, ret2);
 }

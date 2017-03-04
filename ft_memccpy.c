@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 13:07:49 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/02 11:58:37 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/02 12:45:40 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	int i;
 	char *src2;
