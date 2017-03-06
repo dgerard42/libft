@@ -4,12 +4,10 @@ SRC = *.c
 
 OFILES = *.o
 
-HEADERS = libft.h
-
 all: $(NAME)
 
 $(NAME):
-	gcc -c -g -Wall -Werror -Wextra $(SRC) $(HEADERS)
+	gcc -c -Wall -Werror -Wextra $(SRC)
 	ar rc $(NAME) $(OFILES)
 
 clean:

@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   main_striter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 15:58:09 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/05 16:21:29 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/06 09:35:35 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/06 11:11:05 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*memchr(const void *s, int c, size_t n)
+int			main(void)
 {
-	char *cs;
-
-	cs = (char *)s;
-	while (*cs && n > 0)
-	{
-		if (*cs == (unsigned char)c)
-			return(cs);
-		cs++;
-		n--;
-	}
-	return (NULL);
+	char s[] = "que chevere";
+	ft_striter (s, ft_putstr);
 }

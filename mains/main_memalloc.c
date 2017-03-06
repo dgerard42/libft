@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   main_memalloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 15:58:09 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/05 16:21:29 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/05 12:27:32 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/05 13:36:33 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*memchr(const void *s, int c, size_t n)
+int			main(int argc, char** argv)
 {
-	char *cs;
+	size_t size;
+	void *res;
 
-	cs = (char *)s;
-	while (*cs && n > 0)
+	size = 42;
+	res = ft_memalloc(size);
+	if (argc == 2)
 	{
-		if (*cs == (unsigned char)c)
-			return(cs);
-		cs++;
-		n--;
+		res = (void *)argv[1];
+		printf("filled malloc space = %s\n", res);	
 	}
-	return (NULL);
+	if (argc != 2)
+		printf("try again asshole!!\n");
 }

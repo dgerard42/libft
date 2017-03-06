@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 15:58:09 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/05 16:21:29 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/05 18:04:41 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/05 20:58:21 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*memchr(const void *s, int c, size_t n)
+void		ft_strdel(char **as)
 {
-	char *cs;
-
-	cs = (char *)s;
-	while (*cs && n > 0)
-	{
-		if (*cs == (unsigned char)c)
-			return(cs);
-		cs++;
-		n--;
-	}
-	return (NULL);
+	free (*as);
+	*as = (NULL);
 }
