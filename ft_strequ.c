@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_striter.c                                     :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/06 09:35:35 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/06 11:11:05 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/06 17:12:07 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/06 18:15:46 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int			main(void)
+int			ft_strequ(char const *s1, char const *s2)
 {
-	char s[] = "que chevere";
-	ft_striter (s, ft_putstr);
+	int i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	if (s1[i] == '\0' && s2[i] == '\0')
+		return (1);
+	return (0);
 }
