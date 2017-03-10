@@ -5,6 +5,7 @@
 #include <string.h> //memset, strcpy
 #include <stdlib.h> //atoi, malloc
 #include <unistd.h> //write
+#include <ctype.h> //isalpha
 
 void		ft_putchar(char c);
 void		ft_putstr(char *str);
@@ -34,5 +35,14 @@ char		*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 int			ft_strequ(char const *s1, char const *s2);
 int			ft_strnequ(char const *s1, char const *s2, size_t n);
 char		*ft_strsub(const char *s, unsigned int start, size_t len);
+char		*ft_strjoin(const char *s1, const char *s2);
+char		*ft_strtrim(const char *s);
+int			ft_atoi(const char *str);
+int			ft_isalpha(int c);
+int			ft_isdigit(int c);
+int			ft_isalnum(int c);
+int			ft_isascii(int c);
+int			ft_isprint(int c);
+int			ft_toupper(int c);
 
 #endif

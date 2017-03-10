@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/08 12:26:23 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/08 17:50:58 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/09 15:01:57 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/09 16:09:57 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char		*ft_strsub(const char *s, unsigned int start, size_t len)
+int			ft_atoi(const char *str)
 {
 	int i;
-	char *fresh;
+	int neg;
+	int res;
 
 	i = 0;
-	if(!*s)
-		return (NULL);
-	else
-		if(!(fresh = (char*)malloc(len)))
-			return (NULL);
-	while (s[i] && i < (int)len && (int)start < ft_strlen(s))
+	neg = 1;
+	res = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\f' ||
+str[i] == '\r' || str[i] == '\v')
+		i++;
+	if (str[i] == '-')
+		neg = -neg;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		fresh[i] = s[i + start];
+		res = res * 10 + (str[i] - '0');
 		i++;
 	}
-	return (fresh);
+	return (res * neg);	 
 }

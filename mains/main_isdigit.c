@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   main_isdigit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/08 12:26:23 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/08 17:50:58 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/09 15:00:40 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/09 17:25:51 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strsub(const char *s, unsigned int start, size_t len)
+int		main(void)
 {
-	int i;
-	char *fresh;
+	int inputs[9] = {
+		'\t', 'd',
+		-214, 2147483648,
+		'8', -8, '0', 'A', 105 
+	};
 
-	i = 0;
-	if(!*s)
-		return (NULL);
-	else
-		if(!(fresh = (char*)malloc(len)))
-			return (NULL);
-	while (s[i] && i < (int)len && (int)start < ft_strlen(s))
+	int i = 0;
+	printf("TESTS:\n");
+	while (i < 9)
 	{
-		fresh[i] = s[i + start];
+		int a = isdigit(inputs[i]);
+		int b = ft_isdigit(inputs[i]);
+		char *test = a == b ? "\x1B[32mPASS" : "\x1B[31mFAIL";
+		printf("%2d: %12d - %12d - %12d - %s\x1B[0m\n", i, inputs[i], a, b, test);
 		i++;
 	}
-	return (fresh);
+	return (0);
 }

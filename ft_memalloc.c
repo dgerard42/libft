@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/05 12:18:09 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/05 13:33:49 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/08 18:52:28 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void		*ft_memalloc(size_t size)
 {
 	void *fresh;
 
-	fresh = (void *)malloc(size);
-	return (fresh);
+	if(!(fresh = (void *)malloc(size)))
+		return (NULL);
+	else	
+		return (fresh);
 }
 
