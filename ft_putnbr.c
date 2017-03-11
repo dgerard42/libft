@@ -6,13 +6,13 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 19:51:54 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/01 13:31:20 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/09 20:05:31 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nbr)
+void				ft_putnbr(int nbr)
 {
 	if (nbr == -2147483648)
 	{

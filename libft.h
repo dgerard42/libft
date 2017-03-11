@@ -44,5 +44,14 @@ int			ft_isalnum(int c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
 int			ft_toupper(int c);
+int			ft_tolower(int c);
+void		ft_putnbr(int nbr); 
+void		ft_putendl(const char *s);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(const char *s, int fd);
+void		ft_putendl_fd(const char *s, int fd);
+void		ft_putnbr_fd(int nbr, int fd);
+char		*ft_strchr(const char *s, int c);
+char		*ft_strrchr(const char *s, int c);
 
 #endif

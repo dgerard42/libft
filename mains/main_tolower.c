@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main_tolower.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/16 12:36:59 by dgerard           #+#    #+#             */
-/*   Updated: 2017/02/27 20:03:52 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/09 15:00:40 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/09 19:43:55 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+int		main(void)
 {
-	int i;
+	int inputs[9] = {
+		'\t', 'd',
+		98, 2147483648,
+		'9', 'Z', ' ', 'A', 105 
+	};
 
-	i = 0;
-	while (str[i] != '\0')
+	int i = 0;
+	printf("TESTS:\n");
+	while (i < 9)
 	{
-		ft_putchar(str[i]);
+		int a = tolower(inputs[i]);
+		int b = ft_tolower(inputs[i]);
+		char *test = a == b ? "\x1B[32mPASS" : "\x1B[31mFAIL";
+		printf("%2d: %12d - %12d - %12d - %s\x1B[0m\n", i, inputs[i], a, b, test);
 		i++;
 	}
+	return (0);
 }
