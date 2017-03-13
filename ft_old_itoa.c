@@ -1,23 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/05 14:36:05 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/12 17:55:56 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/12 16:25:11 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/13 12:24:55 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnew(size_t size)
+static char			*ft_recurse(char *fresh, int n, int i)
 {
-	void *fresh;
-	
-	if(!(fresh = (char *)malloc(size)))
-		return (NULL);
-	ft_bzero((void *)fresh, size);
-	return ((char *)fresh);
+	while (i < ft_numlen(n))
+	{
+		if (n < 0)
+		{	
+			*fresh = '-';
+			n = -n;
+			i++;
+		}
+		else 
+		{
+			if (n > 9)
+				ft_recurse(fresh++, n / 10, i);
+			*fresh = ((n % 10) + '0');
+			i++;
+		}
+	}
+	return (fresh);
+}
+
+char				*ft_itoa(int n)
+{
+	char *fresh;
+
+	fresh = (ft_strnew(ft_numlen(n)));
+	fresh = ft_recurse(fresh, n, 0);
+	return (fresh);
 }

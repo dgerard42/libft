@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   main_itoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/05 14:36:05 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/12 17:55:56 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/12 16:24:49 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/12 18:08:45 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnew(size_t size)
+int				main(void)
 {
-	void *fresh;
-	
-	if(!(fresh = (char *)malloc(size)))
-		return (NULL);
-	ft_bzero((void *)fresh, size);
-	return ((char *)fresh);
+	int tests[8] = {
+		1, 0, 42, -42, 398729, 
+		-042, 042, 000
+	};	
+
+	int i = 0;
+	char *fresh;
+
+	while (i < 8)
+	{
+		fresh = ft_itoa(tests[i]);
+		printf("||| test #%d ||| input number == %d ||| output string == %s |||\n", i, tests[i], fresh);
+		i++;
+	}
 }

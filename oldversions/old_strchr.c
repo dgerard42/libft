@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   old_strchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/05 14:36:05 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/12 17:55:56 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/10 22:17:49 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/10 22:23:33 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnew(size_t size)
+char		*old_strchr(const char *s, int c)
 {
-	void *fresh;
-	
-	if(!(fresh = (char *)malloc(size)))
-		return (NULL);
-	ft_bzero((void *)fresh, size);
-	return ((char *)fresh);
+	while (-1 <= (ft_strlen(s)))
+	{
+		if (*s == (char)c)
+			return((char*)s);
+		s++;
+	}
+	return (NULL);
 }

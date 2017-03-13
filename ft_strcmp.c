@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/05 14:36:05 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/12 17:55:56 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/12 13:14:25 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/12 14:32:35 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char		*ft_strnew(size_t size)
+int			ft_strcmp(const char *s1, const char *s2)
 {
-	void *fresh;
-	
-	if(!(fresh = (char *)malloc(size)))
-		return (NULL);
-	ft_bzero((void *)fresh, size);
-	return ((char *)fresh);
+	int i;
+	int match;
+
+	i = 0;
+	match = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }
