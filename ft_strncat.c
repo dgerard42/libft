@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 18:18:12 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/03 18:41:05 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/14 20:30:19 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char		*ft_strncat(char *s1, const char *s2, size_t n)
 {
+	if (!s1)
+		return (NULL);
 	while (*s1)
 		s1++;
 	while (*s2 && n > 0)

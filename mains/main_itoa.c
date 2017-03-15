@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   main_itoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/16 12:36:59 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/15 13:25:20 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/12 16:24:49 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/13 16:48:05 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(const char *str, int fd)
+int				main(void)
 {
-	int i;
+	int tests[8] = {
+		42, 0, 1, -42, 398729, 
+		-042, 042, 000
+	};	
 
-	i = 0;
-	while (str[i] != '\0')
+	int i = 0;
+	char *fresh;
+
+	while (i < 8)
 	{
-		ft_putchar_fd(str[i], fd);
+		fresh = ft_itoa(tests[i]);
+		printf("||| test #%d ||| input number == %d||| output string == %s|||\n", i, tests[i], fresh);
 		i++;
 	}
 }

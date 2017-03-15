@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 17:55:06 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/09 14:58:38 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/15 15:02:58 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@
 		printf("%2d-|-%12s-|-%12s-|-%12s-|-\n", i, s[i], a, b);
 		i++;
 	}
-} */
+}*/
 
 int			main(void)
 {
-	char a[] = "  why won't this work  ";
+	char a[] = "    why won't this work    ";
 	char *res;
 	res	= (ft_strtrim(a));
 	printf("res string: ---|%s|---\n", res);

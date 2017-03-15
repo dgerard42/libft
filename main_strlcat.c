@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   main_strlcat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/16 12:36:59 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/15 13:25:20 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/03 18:17:15 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/14 20:24:43 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(const char *str, int fd)
+int			main(void)
 {
-	int i;
+	size_t n;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar_fd(str[i], fd);
-		i++;
-	}
+	n = 9;
+	char s1[42];
+	char s2[] = " pale blue dot";
+	strcpy(s1, "billions and billions");
+
+	strlcat(s1, s2, n);
+	printf("actual strncat results = %s\n", s1);
+
+	char cs1[42];
+	char cs2[] = " pale blue dot";
+	strcpy(cs1, "billions and billions");
+
+	ft_strlcat(cs1, cs2, n);
+	printf("ft_strlcat results = %s\n", cs1);
 }

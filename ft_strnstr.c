@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_itoa.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/12 16:24:49 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/12 18:08:45 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/13 17:14:31 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/13 22:42:53 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				main(void)
+char		*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	int tests[8] = {
-		1, 0, 42, -42, 398729, 
-		-042, 042, 000
-	};	
+	int i;
+	int j;
+	int itemp;
 
-	int i = 0;
-	char *fresh;
-
-	while (i < 8)
+	i = 0;
+	while (s1[i] && (int)len > 0)
 	{
-		fresh = ft_itoa(tests[i]);
-		printf("||| test #%d ||| input number == %d ||| output string == %s |||\n", i, tests[i], fresh);
+		j = 0;
+		itemp = i;
+		while (s1[i] == s2[j] && s1[i] && s2[j])
+		{
+			i++;
+			j++;
+		}
+		if (s2[j] == '\0')
+			return ((char*)s1 + itemp);
+		i = itemp;
 		i++;
+		len--;
 	}
+	return (NULL);
 }

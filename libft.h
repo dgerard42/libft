@@ -7,8 +7,15 @@
 #include <unistd.h> //write
 #include <ctype.h> //isalpha
 
+typedef struct		s_list
+{
+	void			*data;
+	size_t			content_size;
+	struct s_list 	*next;
+}					t_list;
+
 void		ft_putchar(char c);
-void		ft_putstr(char *str);
+void		ft_putstr(const char *str);
 int			ft_strlen(const char *s);
 char		*ft_strdup(const char *s1);
 void		*ft_memset(void *b, int c, size_t len);
@@ -22,7 +29,7 @@ char		*ft_strcpy(char *dst, const char *src);
 char		*ft_strncpy(char *dst, const char *src, size_t len);
 char		*ft_strcat(char *s1, const char *s2);
 char		*ft_strncat(char *s1, const char *s2, size_t n);
-char		*ft_strstr(const char *big, const char *little);
+char		*ft_strstr(const char *s1, const char *s2);
 void		*ft_memalloc(size_t size);
 void		ft_memdel(void **ap);
 char		*ft_strnew(size_t size);
@@ -48,7 +55,7 @@ int			ft_tolower(int c);
 void		ft_putnbr(int nbr); 
 void		ft_putendl(const char *s);
 void		ft_putchar_fd(char c, int fd);
-void		ft_putstr_fd(const char *s, int fd);
+void		ft_putstr_fd(const char *str, int fd);
 void		ft_putendl_fd(const char *s, int fd);
 void		ft_putnbr_fd(int nbr, int fd);
 char		*ft_strchr(const char *s, int c);
@@ -57,5 +64,15 @@ int			ft_strcmp(const char *s1, const char *s2);
 int 		ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_itoa(int n);
 int			ft_numlen(int n);
+char		*ft_strnstr(const char *s1, const char *s2, size_t len);
+size_t		ft_strlcat(char *dst, const char *src, size_t size);
+char		**ft_strsplit(const char *s, char c);
+//t_list		*ft_lstnew(void const *content, size_t content_size);
+void		ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstadd(t_list **alst, t_list *new);
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+//t_list		*ft_lstmap(t_list *list, t_list *(*f)(t_list *elem));
 
 #endif
