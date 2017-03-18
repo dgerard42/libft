@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/06 09:34:56 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/06 12:01:30 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/17 17:57:30 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char *))
 	i = 0;
 	while (s[i])
 	{
-		f(i, s);
+		f(i, (s + i));
 		i++;
 	}
 }

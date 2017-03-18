@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_2dstrnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/15 12:38:55 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/15 13:17:23 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/15 18:12:04 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/15 18:29:46 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list			*ft_lstnew(void const *content, size_t content_size)
+char		**ft_2dstrnew(size_t x, size_t y)
 {
+	int i;
+	char **res;
+
+	i = 0;
+	if(!(res = (char **)malloc(sizeof(char *) * x)));
+		return (NULL);
+	while (i < (int)x)
+	{
+		res[i] = (char *)malloc(sizeof(
+		res[i] = ft_bzero(res[i], 
+		i++;
+	}
 
 }

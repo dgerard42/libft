@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 18:57:01 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/15 15:01:57 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/15 15:19:21 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,10 @@ char			*ft_strtrim(const char *s)
 	{
 		while (s[i] != '\0' && (s[i] == ' ' || s[i] == '\t' || s[i] == '\n'))
 		{
-			if (ft_ifafter(s, i) == 0)
-				i++;
-			else if (ft_ifbefore(s, i) == 0)
+			if (ft_ifafter(s, i) == 0 || ft_ifbefore(s, i) == 0)
 				i++;
 			else 
-				break;
+				break; 
 		}
 		fresh[j] = s[i];
 		j++;

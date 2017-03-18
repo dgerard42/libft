@@ -65,7 +65,7 @@ int 		ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_itoa(int n);
 int			ft_numlen(int n);
 char		*ft_strnstr(const char *s1, const char *s2, size_t len);
-size_t		ft_strlcat(char *dst, const char *src, size_t size);
+size_t		ft_strlcat(char *s1, const char *s2, size_t size);
 char		**ft_strsplit(const char *s, char c);
 //t_list		*ft_lstnew(void const *content, size_t content_size);
 void		ft_lstdelone(t_list **alst, void (*del)(void*, size_t));

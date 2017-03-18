@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 17:14:31 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/13 22:42:53 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/17 13:22:31 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		*ft_strnstr(const char *s1, const char *s2, size_t len)
 	int itemp;
 
 	i = 0;
-	while (s1[i] && (int)len > 0)
+	while (s1[i] && (int)len > i)
 	{
 		j = 0;
 		itemp = i;

@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 17:14:31 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/13 22:44:11 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/17 12:48:44 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char		*ft_strstr(const char *s1, const char *s2)
 	int itemp;
 
 	i = 0;
+	if (!s1[i] && !s2[i])
+		return ((char *)s1);
 	while (s1[i])
 	{
 		j = 0;

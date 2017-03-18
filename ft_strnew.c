@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/05 14:36:05 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/13 13:54:13 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/17 11:51:00 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char		*ft_strnew(size_t size)
 {
-	void *fresh;
+	char *fresh;
 	
-	if(!(fresh = (char *)malloc(size)))
+	if(!(fresh = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
-	ft_memset((void *)fresh, '\0', size);
+	ft_bzero((void *)fresh, (size + 1));
 	return ((char *)fresh);
 }

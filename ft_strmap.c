@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/06 12:19:36 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/06 15:52:02 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/17 17:37:40 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ char		*ft_strmap(char const *s, char(*f)(char))
 	char *fresh;
 
 	i = 0;
-	fresh = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if(!(fresh = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
 	while (*s)
 	{
 		fresh[i] = f(*s);
 		s++;
 		i++;
 	}
+	fresh[i] = '\0';
 	return (fresh);
 }
