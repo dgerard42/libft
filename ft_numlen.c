@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 18:37:51 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/13 13:26:03 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/22 14:53:42 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@ int			ft_numlen(int n)
 {
 	int place;
 
-	if (n < -1)
-	{
+	if (n <= 0)
 		place = 1;
-		n = -n;
-	}
 	else	
 		place = 0;
-	while (n > 0)
+	while (n != 0)
 	{
 		place++;
 		n = (n / 10);

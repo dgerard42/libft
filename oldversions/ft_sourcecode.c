@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/12 16:25:11 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/22 14:54:56 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/23 13:40:58 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/23 14:44:51 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_itoa(int n)
+size_t			ft_strlcat(char *dst, const char *src, size_t n)
 {
-	int i;
-	int length;
-	int isneg;
-	char *fresh;
+	size_t		cn;
+	size_t		dlen;
+	char		*cdst;
+	const char	*csrc;
 
-	isneg = 1;
-	length = ft_numlen(n);
-	i = (length - 1);
-	if (!(fresh = malloc(sizeof(char) * (length + 1))))
-		return (NULL);
-	if (n == 0)
-		fresh[0] = '0';
-	fresh[length] = '\0';
-	while (n != 0)
+	cn = n;
+	cdst = dst;
+	csrc = src;
+	while (cn != 0 && *cdst != '\0')
 	{
-		if (n < 0)
-		{
-			fresh[0] = '-';
-			isneg = -1;
-		}
-		fresh[i] = (((n % 10) * (isneg)) + '0');
-		n = (n / 10);
-		i--;
+		cdst++;
+		cn--;
 	}
-	return (fresh);
+	dlen = cdst - dst;
+	cn = n - dlen;
+	if (cn == 0)
+		return (dlen + ft_strlen(csrc));
+	while (*csrc != '\0' && cn != 1)
+	{
+		if (cn != 1)
+		{
+			*cdst++ = *csrc;
+			cn--;
+		}
+		csrc++;
+	}
+	*cdst = '\0';
+	return (dlen + (csrc - src));
 }

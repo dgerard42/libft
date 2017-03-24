@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/03 18:18:12 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/21 14:18:19 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/20 23:14:08 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/21 16:21:09 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncat(char *s1, const char *s2, size_t n)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t i;
-	size_t j;
-
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0' && j < n)
-	{
-		s1[i] = s2[j];
-		i++;
-		j++;
-	}
-	s1[i] = '\0';
-	return (s1);
+	t_list		*fresh;
+	
+	if(!(fresh = (t_list *)malloc(sizeof(*fresh))))
+		return (NULL);
+	if (content == NULL)
+		fresh->content_size = 0;
+	else
+		if(!(fresh->content = (void *)malloc(content_size)))
+			return (NULL);
+	fresh->content = content;
+	fresh->next = NULL;
+	return (fresh);
 }

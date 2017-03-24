@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strlcat.c                                     :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/03 18:17:15 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/14 20:24:43 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/23 14:46:33 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/23 15:19:43 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			main(void)
+size_t			ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t n;
+	int		i;
+	int		j;
+	size_t	dstlen;
+	size_t	srclen;
 
-	n = 9;
-	char s1[42];
-	char s2[] = " pale blue dot";
-	strcpy(s1, "billions and billions");
-
-	strlcat(s1, s2, n);
-	printf("actual strncat results = %s\n", s1);
-
-	char cs1[42];
-	char cs2[] = " pale blue dot";
-	strcpy(cs1, "billions and billions");
-
-	ft_strlcat(cs1, cs2, n);
-	printf("ft_strlcat results = %s\n", cs1);
+	i = 0;
+	j = 0;
+	dstlen = (size_t)ft_strlen(dst);
+	srclen = (size_t)ft_strlen(src); 
+	while (dst[i] != '\0')
+		i++;	
+	while (*src != '\0' && i < ((int)size - 1))
+	{
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+	dst[i] = '\0';
+	return ((size <= dstlen) ? (srclen + size) : (dstlen + srclen));
 }

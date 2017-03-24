@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 18:18:12 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/21 14:18:19 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/23 14:39:58 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncat(char *s1, const char *s2, size_t n)
+size_t			ft_strlcat(char *dst, const char *src, size_t n)
 {
+	int cn;
 	size_t i;
 	size_t j;
+	char *cdst;
 
 	i = 0;
 	j = 0;
-	while (s1[i] != '\0')
+	cn = (int)n;
+	cdst = dst;
+	while (dst[i] != '\0' && cn-- != 0)
 		i++;
-	while (s2[j] != '\0' && j < n)
+	cn = (n - i - 1);
+	while (src[j] != '\0' && (int)j < cn)
 	{
-		s1[i] = s2[j];
+		dst[i] = src[j];
 		i++;
 		j++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	if (cn > 0)
+		dst[i] = '\0';
+	return ((j >= n) ? ((size_t)ft_strlen(cdst) + j) : ((size_t)ft_strlen(cdst) + n));
 }

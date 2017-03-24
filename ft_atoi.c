@@ -6,9 +6,11 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 15:01:57 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/09 16:09:57 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/20 21:33:07 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int			ft_atoi(const char *str)
 {
@@ -31,5 +33,5 @@ str[i] == '\r' || str[i] == '\v')
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
-	return (res * neg);	 
+	return (res * neg);
 }

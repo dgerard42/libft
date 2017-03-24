@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 17:55:06 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/15 15:19:27 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/21 18:59:41 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@
 
 int			main(void)
 {
-	char a[] = "    why won't this work    ";
+	char a[] = "         ";
 	char *res;
 	res	= (ft_strtrim(a));
 	printf("res string: ---|%s|---\n", res);

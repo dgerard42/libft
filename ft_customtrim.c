@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_customtrim.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 18:57:01 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/21 18:59:03 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/21 19:08:03 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_ifbefore(const char *s)
+static int		ft_ifcbefore(const char *s, char c)
 {
 	int i;
 	
 	i = 0;
-	if (s[0] == ' ' || s[0] == '\t' || s[0] == '\n')
-		while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	if (s[0] == c)
+		while (s[i] == c)
 			i++;
 	return (i);
 }
 
-static int		ft_ifafter(const char *s)
+static int		ft_ifcafter(const char *s, char c)
 {
 	int i;
 	int j;
 	
 	i = (ft_strlen(s) - 1);
 	j = i;
-	if (s[j] == ' ' || s[j] == '\t' || s[j] == '\n')
-		while (i > 0 && (s[i] == ' ' || s[i] == '\t' || s[i] == '\n'))
+	if (s[j] == c)
+		while (i > 0 && (s[i] == c))
 			i--;
 	return (ft_strlen(s) - i);
 }
 
-char			*ft_strtrim(const char *s)
+char			*ft_customtrim(const char *s, char c)
 {
 	int i;
 	int j;
@@ -44,8 +44,8 @@ char			*ft_strtrim(const char *s)
 	char *fresh;
 
 	j = 0;
-	i = ft_ifbefore(s);
-	k = (ft_strlen(s) - ft_ifafter(s) + 1);
+	i = ft_ifcbefore(s, c);
+	k = (ft_strlen(s) - ft_ifcafter(s, c) + 1);
 	if ((k - i) < 0)
 		k = (i + 1);
 	if(!(fresh = (char *)malloc(sizeof(char) * ((k - i) + 1))))

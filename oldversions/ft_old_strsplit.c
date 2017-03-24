@@ -6,9 +6,11 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 21:16:36 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/16 19:32:47 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/21 22:46:29 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int			ft_count_words(const char *s, char c)
 {
@@ -26,6 +28,7 @@ int			ft_count_words(const char *s, char c)
 		words++;
 	}
 	return (words);
+}
 
 char		**ft_2dstrnew(const char *s, char c)
 {
@@ -34,8 +37,9 @@ char		**ft_2dstrnew(const char *s, char c)
 	int words;
 	char **res;
 	
-	res = (char**)malloc(sizeof(char*) * (ft_count_words(trimmed, c));
+	i = 0;
 	words = 0;
+	res = (char**)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	while (s[i])
 	{
 		word_len = 0;
@@ -46,8 +50,7 @@ char		**ft_2dstrnew(const char *s, char c)
 		}
 		while (s[i] == c)
 			i++;
-		res[words] = malloc(sizeof(char)word_len + 1);
-		res[words] = ft_bzero(
+		res[words] = ft_memalloc(word_len + 1);
 		words++;
 	}
 	return (res);
@@ -58,7 +61,19 @@ char		**ft_strsplit(const char *s, char c)
 	char *trimmed;
 	char **res;
 
-	trimmed = ft_strtrim(s, c);
+	trimmed = ft_customtrim(s, c);
 	res = ft_2dstrnew(trimmed, c);
-
+	while (*trimmed)
+	{
+		while (**res && *trimmed && *trimmed != c)
+		{
+			**res = *trimmed;
+			trimmed++;
+			(*res)++;
+		}	
+		while (*trimmed == c)
+			trimmed++;
+		res++;
+	}
+	return (res);
 }

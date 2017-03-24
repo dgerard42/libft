@@ -50,7 +50,10 @@ SRCS =ft_itoa.c \
 		ft_numlen.c \
 		ft_strcat.c \
 		ft_strjoin.c \
-		ft_strrchr.c
+		ft_strrchr.c \
+		ft_strlcat.c \
+		ft_strsplit.c \
+		ft_customtrim.c
 
 OFILES = $(SRCS:.c=.o)
 
