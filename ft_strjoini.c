@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strjoini.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 16:44:31 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/24 01:27:04 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/24 14:20:30 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/24 15:29:51 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+char		*ft_strjoini(const char *s1, const char *s2, size_t size)
 {
-	t_list *rmnode;
+	char	*fresh;
 
-	rmnode = (*alst);
-	del(rmnode->content, rmnode->content_size);
-	free(*rmnode);
-	*rmnode = NULL;
+	fresh = ft_strjoin(s1, s2);
+	while (size == 1 || size == 3)
+		free((void*)s1);
+	while (size == 2 || size == 3)
+		free((void*)s2);
+	return (fresh);
 }

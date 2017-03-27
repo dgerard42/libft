@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 16:44:31 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/24 01:27:04 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/27 13:15:57 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/27 20:54:42 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+void		*ft_realloc(void *ptr, size_t size)
 {
-	t_list *rmnode;
+	void *fresh;
 
-	rmnode = (*alst);
-	del(rmnode->content, rmnode->content_size);
-	free(*rmnode);
-	*rmnode = NULL;
+	if (ptr == NULL)
+		(!(fresh = (void *)malloc((size))))
+			return (NULL);
+	if (size == 0 && ptr)
+		if(!(fresh = (void *)malloc(1)))
+			return (NULL);
+	else
+	{
+		if(!(fresh = (void *)malloc((size))))
+			return (NULL);
+		fresh = ft_memcpy(fresh, ptr, size);
+	}
+	ft_memdel(&ptr);
+	return (fresh);
 }

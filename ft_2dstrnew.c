@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_2dstrnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 16:44:31 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/24 01:27:04 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/21 22:17:40 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/27 15:51:18 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+char		**ft_2dstrnew(size_t x, size_t y)
 {
-	t_list *rmnode;
+	size_t substring;
+	char	**fresh;
 
-	rmnode = (*alst);
-	del(rmnode->content, rmnode->content_size);
-	free(*rmnode);
-	*rmnode = NULL;
+	i = 0;
+	substring = y;
+	if(!(fresh = (char **)malloc(sizeof(char *) * (x + 1))))
+		return (NULL);
+	while (substring <= y)
+	{
+		fresh[substring] = ft_strnew(y);
+		substring++;
+	}
+	fresh[substring] == NULL;
+	return (fresh);
 }
