@@ -14,14 +14,14 @@
 
 char			*ft_itoa(int n)
 {
-	int i;
+	// int i;
 	int length;
 	int isneg;
 	char *fresh;
 
 	isneg = 1;
 	length = ft_numlen(n);
-	i = (length - 1);
+	// i = (length - 1);
 	if (!(fresh = malloc(sizeof(char) * (length + 1))))
 		return (NULL);
 	if (n == 0)
@@ -34,9 +34,9 @@ char			*ft_itoa(int n)
 			fresh[0] = '-';
 			isneg = -1;
 		}
-		fresh[i] = (((n % 10) * (isneg)) + '0');
+		fresh[length - 1] = (((n % 10) * (isneg)) + '0');
 		n = (n / 10);
-		i--;
+		length--;
 	}
 	return (fresh);
 }

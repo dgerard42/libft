@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-int				ft_islast(const char *s, int c)
+static int		ft_islast(const char *s, int c)
 {
 	int i;
-
-	i = ft_strlen(s);
-	while (i > -1)
+ 
+	i = (ft_strlen(s) + 1);
+	while (i >= 0)
 	{
 		s++;
 		if (*s == ((char)c))
@@ -31,16 +31,13 @@ char			*ft_strrchr(const char *s, int c)
 {
 	int i;
 
-	i = (ft_strlen(s));
-	while (i > -1)
+	i = (ft_strlen(s) + 1);
+	while (i >= 0)
 	{
 		if (*s == ((char) c))
 			if (ft_islast(s, c) == 0)
 		   		return ((char*)s);
-			else
-				s++;
-		else
-			s++;
+		s++;
 		i--;	
 	}
 	return (NULL);

@@ -17,15 +17,14 @@ char		**ft_2dstrnew(size_t x, size_t y)
 	size_t substring;
 	char	**fresh;
 
-	i = 0;
 	substring = y;
 	if(!(fresh = (char **)malloc(sizeof(char *) * (x + 1))))
 		return (NULL);
-	while (substring <= y)
+	while (substring <= x)
 	{
 		fresh[substring] = ft_strnew(y);
 		substring++;
 	}
-	fresh[substring] == NULL;
+	fresh[substring] = NULL;
 	return (fresh);
 }

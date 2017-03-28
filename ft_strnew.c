@@ -14,10 +14,10 @@
 
 char		*ft_strnew(size_t size)
 {
-	char *fresh;
-	
+	char	*fresh;
+
 	if(!(fresh = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
 	ft_bzero((void *)fresh, (size + 1));
-	return ((char *)fresh);
+	return (fresh);
 }

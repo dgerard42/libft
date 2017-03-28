@@ -19,7 +19,7 @@ int			main(void)
 	};
 
 	int cinputs[4] = {
-		'g', 'd', '\0', 'a'
+		'g', 'd', 0, 'a'
 	};
 
 	int i = 0;

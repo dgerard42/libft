@@ -10,14 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 t_list			*ft_lstmap(t_list *list, t_list *(*f)(t_list *elem))
 {
-	void	*current;
+	t_list	*current;
+	t_list	*fresh;
 
-	current	= lst;
-	while (*current != NULL)
+	current	= list;
+	while (current != NULL)
 	{
-
+		fresh = f(current);
+		current = current->next;
+		fresh = fresh->next;
 	}
+	return (fresh);
 }
-

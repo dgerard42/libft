@@ -53,7 +53,17 @@ SRCS =ft_itoa.c \
 		ft_strrchr.c \
 		ft_strlcat.c \
 		ft_strsplit.c \
-		ft_customtrim.c
+		ft_customtrim.c\
+		ft_2dstrnew.c\
+		ft_realloc.c\
+		ft_strjoini.c\
+		ft_strrev.c\
+		ft_lstnew.c\
+		ft_lstdelone.c\
+		ft_lstdel.c\
+		ft_lstadd.c\
+		ft_lstiter.c\
+		ft_lstmap.c
 
 OFILES = $(SRCS:.c=.o)
 

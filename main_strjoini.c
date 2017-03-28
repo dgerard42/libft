@@ -48,17 +48,16 @@ int			main(void)
 {
 	char *s1;
 	char *s2;
-	char fill[] = "iuwheiuwhe";
-	void *fil;
-	fil = fill;
-	size_t n = 12;
-//	char *res;
+	char *fill = "0123456789five";
+	size_t n = 14;
+	char *res;
 
-	s1 = (char*)malloc(sizeof(char) * 15);
-	s2 = (char*)malloc(sizeof(char) * 15);
-	memcpy((void*)s1, fill, n);
-	memcpy((void*)s2, fill, n);
-//	res = ft_strjoini(s1, s2, 3);
-	free(s1);
-//	printf ("res = %s", res);
+	s1 = (char *)malloc(sizeof(char) * 15);
+	s2 = (char *)malloc(sizeof(char) * 15);
+	ft_bzero(s1, (size_t)15);
+	ft_bzero(s2, (size_t)15);
+	memcpy((void *)s1, (void *)fill, n);
+	memcpy((void *)s2, (void *)fill, n);
+	res = ft_strjoin(s1, s2);
+	printf ("res = %s\n", res);
 }

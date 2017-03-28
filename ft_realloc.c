@@ -17,17 +17,17 @@ void		*ft_realloc(void *ptr, size_t size)
 	void *fresh;
 
 	if (ptr == NULL)
-		(!(fresh = (void *)malloc((size))))
-			return (NULL);
+	{
+		fresh = (void *)malloc((size));
+		ft_memdel(&ptr);
+	}
 	if (size == 0 && ptr)
-		if(!(fresh = (void *)malloc(1)))
-			return (NULL);
+		fresh = (void *)malloc(1);
 	else
 	{
-		if(!(fresh = (void *)malloc((size))))
-			return (NULL);
+		fresh = (void *)malloc((size));
 		fresh = ft_memcpy(fresh, ptr, size);
+		ft_memdel(&ptr);
 	}
-	ft_memdel(&ptr);
-	return (fresh);
+	return ((!fresh) ? NULL : fresh);
 }
