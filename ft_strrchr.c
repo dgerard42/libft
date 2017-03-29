@@ -6,39 +6,22 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 18:40:20 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/17 13:30:18 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/03/10 22:17:31 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_islast(const char *s, int c)
+char		*ft_strrchr(const char *s, int c)
 {
 	int i;
- 
-	i = (ft_strlen(s) + 1);
+
+	i = (ft_strlen(s));
 	while (i >= 0)
 	{
-		s++;
-		if (*s == ((char)c))
-			return (1);
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
 		i--;
-	}
-	return (0);
-}
-
-char			*ft_strrchr(const char *s, int c)
-{
-	int i;
-
-	i = (ft_strlen(s) + 1);
-	while (i >= 0)
-	{
-		if (*s == ((char) c))
-			if (ft_islast(s, c) == 0)
-		   		return ((char*)s);
-		s++;
-		i--;	
 	}
 	return (NULL);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strjoin.c                                     :+:      :+:    :+:   */
+/*   main_strjoini.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -58,6 +58,6 @@ int			main(void)
 	ft_bzero(s2, (size_t)15);
 	memcpy((void *)s1, (void *)fill, n);
 	memcpy((void *)s2, (void *)fill, n);
-	res = ft_strjoin(s1, s2);
+	res = ft_strjoini(s1, s2, (size_t));
 	printf ("res = %s\n", res);
 }

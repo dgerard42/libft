@@ -23,7 +23,7 @@ char		*ft_strsub(const char *s, unsigned int start, size_t len)
 	else
 		if(!(fresh = (char*)malloc(sizeof(char) * (len + 1))))
 			return (NULL);
-	while (s[i] && i < (int)len && (int)start < ft_strlen(s))
+	while (s[i] && i < (int)len && (size_t)start < ft_strlen(s))
 	{
 		fresh[i] = s[i + start];
 		i++;

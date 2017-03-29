@@ -1,31 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_memchr.c                                      :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/02 15:58:53 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/02 16:27:27 by dgerard          ###   ########.fr       */
+/*   Created: 2017/03/10 18:40:20 by dgerard           #+#    #+#             */
+/*   Updated: 2017/03/17 13:30:18 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main ()
+static int		ft_islast(const char *s, int c)
 {
-   const char str[] = "is there anybody home";
-   const char ch = 'a';
-   char *ret;
+	int i;
+ 
+	i = (ft_strlen(s) + 1);
+	while (i >= 0)
+	{
+		s++;
+		if (*s == ((char)c))
+			return (1);
+		i--;
+	}
+	return (0);
+}
 
-   ret = memchr(str, ch, strlen(str));
+char			*ft_strrchr(const char *s, int c)
+{
+	int i;
 
-   printf("String after |%c| is - |%s|\n", ch, ret);
-   
-   const char str2[] = "is there anybody home";
-   const char ch2 = 'a';
-   char *ret2;
-   
-   ret2 = memchr(str2, ch2, strlen(str2));
-   printf("String after |%c| is - |%s|\n", ch2, ret2);
+	i = (ft_strlen(s) + 1);
+	while (i >= 0)
+	{
+		if (*s == ((char) c))
+			if (ft_islast(s, c) == 0)
+		   		return ((char*)s);
+		s++;
+		i--;	
+	}
+	return (NULL);
 }

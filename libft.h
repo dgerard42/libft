@@ -16,7 +16,7 @@ typedef struct		s_list
 
 void		ft_putchar(char c);
 void		ft_putstr(const char *str);
-int			ft_strlen(const char *s);
+size_t		ft_strlen(const char *s);
 char		*ft_strdup(const char *s1);
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
@@ -71,12 +71,13 @@ t_list		*ft_lstnew(void const *content, size_t content_size);
 void		ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void		ft_lstadd(t_list **alst, t_list *new);
-void		                                                                                                                                                                                               ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list		*ft_lstmap(t_list *list, t_list *(*f)(t_list *elem));
 char		*ft_customtrim(const char *s, char c);
 char		*ft_strrev(char *s);
 char		*ft_strjoini(const char *s1, const char *s2, size_t i);
 char		**ft_2dstrnew(size_t x, size_t y);
 char		ft_itoa_base(int n, int base);
+void		*ft_realloc(void *ptr, size_t size);
 
 #endif
