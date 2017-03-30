@@ -39,5 +39,4 @@ int 		main(void)
 		printf ("%d res string = %s\n", i, res);
 		i++;
 	}
-
 }

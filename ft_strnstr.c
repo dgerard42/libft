@@ -14,16 +14,16 @@
 
 char		*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	int i;
-	int j;
-	int itemp;
+	size_t	i;
+	size_t	j;
+	size_t	itemp;
 
 	i = 0;
-	while (s1[i] && (int)len > i)
+	while (s1[i] && i < len)
 	{
 		j = 0;
 		itemp = i;
-		while (s1[i] == s2[j] && s1[i] && s2[j])
+		while (s1[i] == s2[j] && i < len && s2[j])
 		{
 			i++;
 			j++;
@@ -32,7 +32,6 @@ char		*ft_strnstr(const char *s1, const char *s2, size_t len)
 			return ((char*)s1 + itemp);
 		i = itemp;
 		i++;
-		len--;
 	}
 	return (NULL);
 }

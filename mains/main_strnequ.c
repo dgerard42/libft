@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-/*int		main(void)
+int		main(void)
 {
 	int i;
 	size_t n;
-	n = 1;
+	n = 0;
 	char s1[] = "benedict";
-	char s2[] = "beatrice";
+	char s2[] = "";
 
 	i = ft_strnequ(s1, s2, n);
 	printf("original strings = %s, %s\n", s1, s2);
 	printf("match int res = %d\n", i);
-} */
+} 
 
 //cases to manually enter:
 //if the strings are the same length but no match
@@ -34,6 +34,7 @@
 //if the strings are identical and same length
 //if the strings are not identical up to n but end on identical letters
 
+/*
 int			main(void)
 {
 	char *s1inputs[7] = {
@@ -67,4 +68,4 @@ int			main(void)
 		printf("%2d: %12s - %12s - %12d - %12d - %12d - %s\x1B[0m\n", i, s1inputs[i], s2inputs[i], ninputs[i], a, b, test);
 		i++;
 	}
-}
+}*/

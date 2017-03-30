@@ -14,17 +14,14 @@
 
 int			main(void)
 {
-	char *big [4] = {
-		"vincit qui se vincit", "vincit qui se vincit",
-		"vincit qui se vincit", "vincit qui se se vincit"
-	};
+	char big[] = "un deux 9";
 
 	char *little [4] = {
-		"se", "", "aurelius", "se"
+		"deux", "deux", "6", "9"
 	};
 
 	int len[4] = {
-		15, 2, 3, 3
+		10, 1, 10, 10
 	};
 	
 	int i = 0;
@@ -32,9 +29,9 @@ int			main(void)
 	{
 		char *res;
 		char *ft_res;
-		res = strnstr((const char*)big[i], (const char*)little[i], (size_t)len[i]);
-		ft_res = ft_strnstr((const char*)big[i], (const char*)little[i], (size_t)len[i]);
-		printf("|||input ==%s, %s|||strnstr ouput ==%s|||ft_strnstr output ==%s|||\n", big[i], little[i], res, ft_res);
+		res = strnstr((const char*)big, (const char*)little[i], (size_t)len[i]);
+		ft_res = ft_strnstr((const char*)big, (const char*)little[i], (size_t)len[i]);
+		printf("|||input ==%s, %s|||strnstr ouput ==%s|||ft_strnstr output ==%s|||\n", big, little[i], res, ft_res);
 		i++;
 	}
 }

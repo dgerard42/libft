@@ -11,23 +11,23 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 int			main(void)
 {
 	char	*s1[9] = {
 		"daniella", "eliana", "cora",
-		"mio", "sbogar", "snorth",
-		"scollet", "angie", "sergio"
+		"q", "sbogar", "snorth",
+		"scollet", "angie", "mio"
 	};
 
 	char	*s2[9] = {
 		"daniella", "tammy", "elliot",
-		"ian", "lou", "maelle", 
+		"a", "ian", "maelle", 
 		"anastasia", "kaitlyn", "obssa"
 	};
 
 	int		n[9] = {
-		7, 3, 4, 2, 14, 42, -3, 1, 3
+		7, 3, 4, 0, 14, 42, -3, 1, 3
 	};
 
 	int i = 0;
@@ -38,4 +38,15 @@ int			main(void)
 		printf("||| library result == %d ||| ft_result == %d |||\n", a, b);
 		i++;
 	}	
+}
+*/
+
+int			main(void)
+{
+	int res;
+	int ft_res;
+
+	res = strncmp("q", "a", 0);
+	ft_res = ft_strncmp("q", "a", 0);
+	printf("res = %d,ft_res = %d\n", res, ft_res); 
 }

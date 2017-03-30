@@ -54,30 +54,30 @@ static char			**ft_dyn2dstrnew(const char *s, char c)
 	return (ret);
 }
 
-char				**ft_strsplit(const char *s, char c)
+char			**ft_strsplit(const char *s, char c)
 {
-	int		j;
-	int 	k;
 	char 	*trimd;
 	char 	**res;
+	char	**reb;
+	char	*ret;
 
-	j = 0;
 	trimd = ft_customtrim(s, c);
 	if (!trimd)
 		return (NULL);
 	res = ft_dyn2dstrnew(trimd, c);
 	if (!res)
 		return (NULL);
+	ret = *res;
+	reb = res;
 	while (*trimd)
 	{
-		k = 0;
 		while (*trimd && *trimd != c)
-			res[j][k++] = *trimd++;
-		res[j][k] = '\0';
-		while (c == *trimd)
+			*ret++ = *trimd++;
+		*ret = '\0';
+		while (*trimd == c)
 			trimd++;
-		j++;
+		ret = *(++reb);
 	}
-	res[j] = (NULL);
+	ret = NULL;
 	return (res);
 }

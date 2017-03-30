@@ -13,7 +13,6 @@
 #include "libft.h"
 #include <assert.h>
 
-
 int	function()
 {	
 	printf("Hello\n");
@@ -70,28 +69,17 @@ int	function()
 */
 	return (0);
 }
+
 int main ()
 {
-	function();
-   /**
-   const char str[] = "abcdef";
+//	function();
    char *ret;
 
-   //ret = memchr(str, 'a', (size_t)5);
-   ret = ft_memchr(str, 'a', (size_t)5);
-   
-	if (!(ft_memchr("abcdef", 'a', 5) == memchr("abcdef", 'a', 5)))
-		printf("Error1\n");
-
+   ret = memchr(NULL, 0, 0);
    printf("lib String after is - |%s|\n", ret);
-   
-//   const char str2[] = "abcdef";
-//   int ch2 = 999;
-/**
+  
    char *ret2;
-   
-   ret2 = ft_memchr("abcdef", 999, (size_t)6);
-
+  
+   ret2 = ft_memchr(NULL, 0, 0);
    printf("ft String after |%c| is - |%s|\n", 999, ret2);
-**/
 }
