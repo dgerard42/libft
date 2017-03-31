@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-char		*ft_strjoini(const char *s1, const char *s2, size_t size)
+char		*ft_strjoini(const char *s1, const char *s2, size_t i)
 {
 	char	*fresh;
 
 	fresh = ft_strjoin(s1, s2);
- 	if (size == 1 || size == 3)
+ 	if (i == 1 || i == 3)
 		free((void *)s1);
-	else if (size == 2 || size == 3)
+	else if (i == 2 || i == 3)
 		free((void *)s2);
 	return (fresh);
 }

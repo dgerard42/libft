@@ -58,6 +58,6 @@ int			main(void)
 	ft_bzero(s2, (size_t)15);
 	memcpy((void *)s1, (void *)fill, n);
 	memcpy((void *)s2, (void *)fill, n);
-	res = ft_strjoini(s1, s2, (size_t));
+	res = ft_strjoini(s1, s2, (size_t)3);
 	printf ("res = %s\n", res);
 }

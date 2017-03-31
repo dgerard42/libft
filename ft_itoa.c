@@ -14,14 +14,12 @@
 
 char			*ft_itoa(int n)
 {
-	// int i;
 	int length;
 	int isneg;
 	char *fresh;
 
 	isneg = 1;
 	length = ft_numlen(n);
-	// i = (length - 1);
 	if (!(fresh = malloc(sizeof(char) * (length + 1))))
 		return (NULL);
 	if (n == 0)

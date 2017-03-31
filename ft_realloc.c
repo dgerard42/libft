@@ -18,16 +18,21 @@ void		*ft_realloc(void *ptr, size_t size)
 
 	if (ptr == NULL)
 	{
-		fresh = (void *)malloc((size));
+		if (!(fresh = (void *)malloc((size))))
+			return (NULL);
 		ft_memdel(&ptr);
 	}
 	if (size == 0 && ptr)
-		fresh = (void *)malloc(1);
+	{
+		if(!(fresh = (void *)malloc(1)))
+			return (NULL);
+	}
 	else
 	{
-		fresh = (void *)malloc((size));
+		if(!(fresh = (void *)malloc((size))))
+			return (NULL);
 		fresh = ft_memcpy(fresh, ptr, size);
 		ft_memdel(&ptr);
 	}
-	return ((!fresh) ? NULL : fresh);
+	return (fresh);
 }
