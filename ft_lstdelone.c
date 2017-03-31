@@ -14,10 +14,7 @@
 
 void		ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
-	t_list	*rmnode;
-
-	rmnode = (*alst);
-	del(rmnode->content, rmnode->content_size);
-	free((void *)rmnode);
-	rmnode = NULL;
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }
