@@ -14,8 +14,11 @@
 
 void		ft_strclr(char *s)
 {
-	int n;
+	if (s)
+	{
+		int n;
 
-	n = ft_strlen((const char *)s);
-	ft_bzero((void *)s, (size_t)n);
+		n = ft_strlen((const char *)s);
+		ft_bzero((void *)s, (size_t)n);
+	}
 }

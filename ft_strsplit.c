@@ -62,6 +62,8 @@ char				**ft_strsplit(const char *s, char c)
 	char 	**res;
 
 	j = 0;
+	if (!s || !c)
+		return (NULL);
 	trimd = ft_customtrim(s, c);
 	if (!trimd)
 		return (NULL);

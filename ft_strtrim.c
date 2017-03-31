@@ -44,6 +44,8 @@ char			*ft_strtrim(const char *s)
 	char *fresh;
 
 	j = 0;
+	if (!s)
+		return (NULL);
 	i = ft_ifbefore(s);
 	k = (ft_strlen(s) - ft_ifafter(s) + 1);
 	if ((k - i) < 0)

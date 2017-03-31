@@ -12,12 +12,14 @@
 
 #include "libft.h"
 
-char		*ft_strmap(const char*s, char(*f)(char))
+char		*ft_strmap(const char *s, char(*f)(char))
 {
 	int i;
 	char *fresh;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	if(!(fresh = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
 	while (*s)
