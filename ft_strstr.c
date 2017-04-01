@@ -14,9 +14,9 @@
 
 char		*ft_strstr(const char *s1, const char *s2)
 {
-	int i;
-	int j;
-	int itemp;
+	size_t	i;
+	size_t	j;
+	size_t	itemp;
 
 	i = 0;
 	if (!s1[i] && !s2[i])

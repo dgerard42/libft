@@ -19,11 +19,13 @@ char		*ft_strnstr(const char *s1, const char *s2, size_t len)
 	size_t	itemp;
 
 	i = 0;
-	while (s1[i] && i < len)
+	if (s1[0] == 0 && s2[0] == 0)
+		return ((char*)s1);
+	while (s1[i] && i <= len)
 	{
 		j = 0;
 		itemp = i;
-		while (s1[i] == s2[j] && i < len && s2[j])
+		while (s1[i] == s2[j] && s1[i] && i < len && s2[j])
 		{
 			i++;
 			j++;

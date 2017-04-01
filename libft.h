@@ -1,11 +1,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdio.h> //printf
-#include <string.h> //memset, strcpy
-#include <stdlib.h> //atoi, malloc
-#include <unistd.h> //write
-#include <ctype.h> //isalpha
+#include <string.h> 
+#include <stdlib.h> 
+#include <unistd.h> 
 
 typedef struct		s_list
 {
