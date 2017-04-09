@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 22:17:40 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/27 15:51:18 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/04/06 17:52:02 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		**ft_2dstrnew(size_t x, size_t y)
 	size_t substring;
 	char	**fresh;
 
-	substring = y;
+	substring = 0;
 	if(!(fresh = (char **)malloc(sizeof(char *) * (x + 1))))
 		return (NULL);
 	while (substring <= x)
@@ -25,6 +25,6 @@ char		**ft_2dstrnew(size_t x, size_t y)
 		fresh[substring] = ft_strnew(y);
 		substring++;
 	}
-	fresh[substring] = NULL;
+	fresh[x + 1] = NULL;
 	return (fresh);
 }
