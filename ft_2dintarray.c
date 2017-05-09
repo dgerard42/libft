@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2dstrnew.c                                      :+:      :+:    :+:   */
+/*   ft_2dintarray.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 22:17:40 by dgerard           #+#    #+#             */
-/*   Updated: 2017/04/17 21:19:38 by dgerard          ###   ########.fr       */
+/*   Created: 2017/04/28 14:22:54 by dgerard           #+#    #+#             */
+/*   Updated: 2017/05/03 19:09:08 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_2dstrnew(size_t x, size_t y)
+int			**ft_2dintarray(size_t y, size_t x)
 {
-	size_t substring;
-	char	**fresh;
+	size_t	subarray;
+	int 	**fresh;
 
-	substring = 0;
-	if(!(fresh = (char **)malloc(sizeof(char *) * (x + 1))))
-		return (NULL);
-	while (substring < x)
+	subarray = 0;
+	fresh = ft_memalloc(sizeof(int *) * (y + 1));
+	while (subarray <= y)
 	{
-		fresh[substring] = ft_strnew(y);
-		substring++;
+		fresh[subarray] = ft_intarraynew(x);
+		subarray++;
 	}
-	fresh[x] = NULL;
+	fresh[y + 1] = NULL;
 	return (fresh);
 }

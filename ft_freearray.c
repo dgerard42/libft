@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2dstrnew.c                                      :+:      :+:    :+:   */
+/*   ft_freearray.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 22:17:40 by dgerard           #+#    #+#             */
-/*   Updated: 2017/04/17 21:19:38 by dgerard          ###   ########.fr       */
+/*   Created: 2017/05/03 20:20:43 by esterna           #+#    #+#             */
+/*   Updated: 2017/05/07 20:21:34 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_2dstrnew(size_t x, size_t y)
+void			free_array(void **lst, int n)
 {
-	size_t substring;
-	char	**fresh;
+	int i;
+	int **tmp;
 
-	substring = 0;
-	if(!(fresh = (char **)malloc(sizeof(char *) * (x + 1))))
-		return (NULL);
-	while (substring < x)
+	i = 0;
+	tmp = (int **)lst;
+	while (i < n)
 	{
-		fresh[substring] = ft_strnew(y);
-		substring++;
+		free(tmp[i]);
+		i++;
 	}
-	fresh[x] = NULL;
-	return (fresh);
+	free(lst);
 }
