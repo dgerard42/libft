@@ -6,12 +6,12 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 15:16:55 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/16 22:43:09 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/16 18:15:10 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-	
+
 char		*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	char *tmp;

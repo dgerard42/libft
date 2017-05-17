@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/28 14:22:54 by dgerard           #+#    #+#             */
-/*   Updated: 2017/05/03 19:09:08 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/16 18:36:09 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int			**ft_2dintarray(size_t y, size_t x)
 {
 	size_t	subarray;
-	int 	**fresh;
+	int		**fresh;
 
 	subarray = 0;
 	fresh = ft_memalloc(sizeof(int *) * (y + 1));

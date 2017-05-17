@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 16:25:11 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/22 14:54:56 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/16 19:24:10 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char			*ft_itoa(int n)
 {
-	int length;
-	int isneg;
-	char *fresh;
+	int		length;
+	int		isneg;
+	char	*fresh;
 
 	isneg = 1;
 	length = ft_numlen(n);

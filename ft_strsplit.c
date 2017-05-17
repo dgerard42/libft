@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 22:17:40 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/24 15:51:18 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/16 18:17:25 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char			**ft_dyn2dstrnew(const char *s, char c)
 	char	**res;
 	char	**ret;
 
-	if(!(res = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1))))
+	if (!(res = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1))))
 		return (NULL);
 	ret = res;
 	while (*s)
@@ -47,7 +47,7 @@ static char			**ft_dyn2dstrnew(const char *s, char c)
 		}
 		while (*s == c)
 			s++;
-		if(!(*res = (char *)malloc(sizeof(char) * (word_size + 1))))
+		if (!(*res = (char *)malloc(sizeof(char) * (word_size + 1))))
 			return (NULL);
 		res++;
 	}
@@ -57,9 +57,9 @@ static char			**ft_dyn2dstrnew(const char *s, char c)
 char				**ft_strsplit(const char *s, char c)
 {
 	int		j;
-	int 	k;
-	char 	*trimd;
-	char 	**res;
+	int		k;
+	char	*trimd;
+	char	**res;
 
 	j = 0;
 	trimd = ft_customtrim(s, c);

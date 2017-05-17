@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 22:17:40 by dgerard           #+#    #+#             */
-/*   Updated: 2017/04/17 21:19:38 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/16 21:24:57 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char		**ft_2dstrnew(size_t x, size_t y)
 {
-	size_t substring;
+	size_t	substring;
 	char	**fresh;
 
 	substring = 0;
-	if(!(fresh = (char **)malloc(sizeof(char *) * (x + 1))))
+	if (!(fresh = (char **)malloc(sizeof(char *) * (x + 1))))
 		return (NULL);
 	while (substring < x)
 	{

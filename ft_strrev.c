@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 11:54:42 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/24 14:17:16 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/16 18:33:58 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char		*ft_strrev(char *s)
 {
-	int a;
-	int b;
-	char tmp;
+	int		a;
+	int		b;
+	char	tmp;
 
 	tmp = 'a';
 	a = 0;
