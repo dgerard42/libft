@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/24 14:20:30 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/24 15:29:51 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/17 14:38:01 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_strjoini(const char *s1, const char *s2, size_t i)
 	char	*fresh;
 
 	fresh = ft_strjoin(s1, s2);
- 	if (i == 1 || i == 3)
+	if (i == 1 || i == 3)
 		free((void *)s1);
 	else if (i == 2 || i == 3)
 		free((void *)s2);

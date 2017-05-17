@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 18:57:01 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/21 19:08:03 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/17 14:32:00 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int		ft_ifcbefore(const char *s, char c)
 {
 	int i;
-	
+
 	i = 0;
 	if (s[0] == c)
 		while (s[i] == c)
@@ -27,7 +27,7 @@ static int		ft_ifcafter(const char *s, char c)
 {
 	int i;
 	int j;
-	
+
 	i = (ft_strlen(s) - 1);
 	j = i;
 	if (s[j] == c)
@@ -38,17 +38,17 @@ static int		ft_ifcafter(const char *s, char c)
 
 char			*ft_customtrim(const char *s, char c)
 {
-	int i;
-	int j;
-	int k;
-	char *fresh;
+	int		i;
+	int		j;
+	int		k;
+	char	*fresh;
 
 	j = 0;
 	i = ft_ifcbefore(s, c);
 	k = (ft_strlen(s) - ft_ifcafter(s, c) + 1);
 	if ((k - i) < 0)
 		k = (i + 1);
-	if(!(fresh = (char *)malloc(sizeof(char) * ((k - i) + 1))))
+	if (!(fresh = (char *)malloc(sizeof(char) * ((k - i) + 1))))
 		return (NULL);
 	while (i < k)
 	{

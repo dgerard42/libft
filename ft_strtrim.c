@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 18:57:01 by dgerard           #+#    #+#             */
-/*   Updated: 2017/03/24 15:50:12 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/17 14:34:53 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int		ft_ifbefore(const char *s)
 {
 	int i;
-	
+
 	i = 0;
 	if (s[0] == ' ' || s[0] == '\t' || s[0] == '\n')
 		while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
@@ -27,7 +27,7 @@ static int		ft_ifafter(const char *s)
 {
 	int i;
 	int j;
-	
+
 	i = (ft_strlen(s) - 1);
 	j = i;
 	if (s[j] == ' ' || s[j] == '\t' || s[j] == '\n')
@@ -38,17 +38,17 @@ static int		ft_ifafter(const char *s)
 
 char			*ft_strtrim(const char *s)
 {
-	int i;
-	int j;
-	int k;
-	char *fresh;
+	int		i;
+	int		j;
+	int		k;
+	char	*fresh;
 
 	j = 0;
 	i = ft_ifbefore(s);
 	k = (ft_strlen(s) - ft_ifafter(s) + 1);
 	if ((k - i) < 0)
 		k = (i + 1);
-	if(!(fresh = (char *)malloc(sizeof(char) * ((k - i) + 1))))
+	if (!(fresh = (char *)malloc(sizeof(char) * ((k - i) + 1))))
 		return (NULL);
 	while (i < k)
 	{
