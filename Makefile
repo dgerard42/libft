@@ -1,6 +1,8 @@
 NAME = libft.a
 
-SRCS =ft_itoa.c \
+CFLAGS = -Wall -Werror -Wextra
+
+SRCS = \
 		ft_strchr.c \
 		ft_strlen.c \
 		ft_strstr.c \
@@ -72,9 +74,11 @@ OFILES = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c -Wall -Werror -Wextra $(SRCS)
-	ar rc $(NAME) $(OFILES)
+$(NAME): $(OFILES)
+	ar rc $(NAME) $(OFILES) 
+
+%.o: %.c
+	gcc $(CFLAGS) -c $^ -o $@
 
 clean:
 	rm -f $(OFILES)
