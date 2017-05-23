@@ -2,7 +2,7 @@ NAME = libft.a
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS = \
+SRCS = 	ft_itoa.c\
 		ft_strchr.c \
 		ft_strlen.c \
 		ft_strstr.c \
@@ -75,15 +75,19 @@ OFILES = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OFILES)
-	ar rc $(NAME) $(OFILES) 
+	@ar rc $(NAME) $(OFILES)
+	@echo "\033[32m[library created ( ͡° ͜ʖ ͡°)]\033[0m"
 
 %.o: %.c
-	gcc $(CFLAGS) -c $^ -o $@
+	@gcc $(CFLAGS) -c $^ -o $@
+	@/bin/echo -n "❂"
 
 clean:
-	rm -f $(OFILES)
+	@rm -f $(OFILES)
+	@echo "\033[31m[.o files deleted (╯°□°）╯︵ ┻━┻ ]\033[0m"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "\033[31m[library deleted ᕙ(⇀‸↼‶)ᕗ ]\033[0m"
 
 re: fclean all
