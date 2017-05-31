@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/09 11:45:56 by dgerard           #+#    #+#             */
-/*   Updated: 2017/05/09 11:48:41 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/05/29 18:19:34 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define BUFF_SIZE 12
+# define MAX_FD 4096
 
 typedef struct		s_list
 {
@@ -90,5 +93,6 @@ char				**ft_2dstrnew(size_t x, size_t y);
 void				*ft_realloc(void *ptr, size_t size);
 int					**ft_2dintarray(size_t y, size_t x);
 int					*ft_intarraynew(size_t x);
+int					get_next_line(const int fd, char **line);
 
 #endif
