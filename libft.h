@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/09 11:45:56 by dgerard           #+#    #+#             */
-/*   Updated: 2017/05/29 18:19:34 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/06/04 14:22:54 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ void				*ft_realloc(void *ptr, size_t size);
 int					**ft_2dintarray(size_t y, size_t x);
 int					*ft_intarraynew(size_t x);
 int					get_next_line(const int fd, char **line);
+void				ft_swap(unsigned char *a, unsigned char *b, size_t size);
 
 #endif
