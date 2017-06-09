@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freearray.c                                     :+:      :+:    :+:   */
+/*   ft_bitswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/03 20:20:43 by esterna           #+#    #+#             */
-/*   Updated: 2017/05/07 20:21:34 by dgerard          ###   ########.fr       */
+/*   Created: 2017/06/04 11:42:47 by dgerard           #+#    #+#             */
+/*   Updated: 2017/06/09 16:02:04 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			free_array(void **lst, int n)
+void			ft_bitswap(unsigned char *a, unsigned char *b, size_t size)
 {
-	int i;
-	int **tmp;
+	unsigned char tmp;
+	unsigned char *ac;
+	unsigned char *bc;
 
-	i = 0;
-	tmp = (int **)lst;
-	while (i < n)
+	ac = a;
+	bc = b;
+	while (size--)
 	{
-		free(tmp[i]);
-		i++;
+		tmp = *ac;
+		*ac++ = *bc;
+		*bc++ = tmp;
 	}
-	free(lst);
 }

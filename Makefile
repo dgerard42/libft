@@ -68,9 +68,9 @@ SRCS = 	ft_itoa.c\
 		ft_lstmap.c\
 		ft_intarraynew.c\
 		ft_2dintarray.c\
-		ft_freearray.c\
+		ft_2dfreearray.c\
 		get_next_line.c\
-		ft_swap.c
+		ft_bitswap.c
 
 OFILES = $(SRCS:.c=.o)
 

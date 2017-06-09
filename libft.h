@@ -93,7 +93,8 @@ char				**ft_2dstrnew(size_t x, size_t y);
 void				*ft_realloc(void *ptr, size_t size);
 int					**ft_2dintarray(size_t y, size_t x);
 int					*ft_intarraynew(size_t x);
+void				ft_2dfreearray(void **array, int n);
 int					get_next_line(const int fd, char **line);
-void				ft_swap(unsigned char *a, unsigned char *b, size_t size);
+void				ft_bitswap(unsigned char *a, unsigned char *b, size_t size);
 
 #endif

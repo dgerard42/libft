@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_2dfreearray.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/04 11:42:47 by dgerard           #+#    #+#             */
-/*   Updated: 2017/06/04 15:40:00 by dgerard          ###   ########.fr       */
+/*   Created: 2017/05/03 20:20:43 by esterna           #+#    #+#             */
+/*   Updated: 2017/06/08 14:23:36 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_swap(unsigned char *a, unsigned char *b, size_t size)
+void			ft_2dfreearray(void **array, int n)
 {
-	unsigned char tmp;
-	unsigned char *ac;
-	unsigned char *bc;
+	int i;
+	int **tmp;
 
-	ac = a;
-	bc = b;
-	while (size--)
+	i = 0;
+	tmp = (int **)array;
+	while (i < n)
 	{
-		tmp = *ac;
-		*ac++ = *bc;
-		*bc++ = tmp;
+		ft_memdel((void**)&tmp[i]);
+		i++;
 	}
+	ft_memdel(array);
 }
