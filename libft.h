@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/09 11:45:56 by dgerard           #+#    #+#             */
-/*   Updated: 2017/06/04 14:22:54 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/06/16 11:32:20 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ int					*ft_intarraynew(size_t x);
 void				ft_2dfreearray(void **array, int n);
 int					get_next_line(const int fd, char **line);
 void				ft_bitswap(unsigned char *a, unsigned char *b, size_t size);
+char				*ft_itoa_base(int value, int base);
 
 #endif
