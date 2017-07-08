@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoini.c                                      :+:      :+:    :+:   */
+/*   ft_floatarraynew.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/24 14:20:30 by dgerard           #+#    #+#             */
-/*   Updated: 2017/07/07 20:52:34 by dgerard          ###   ########.fr       */
+/*   Created: 2017/04/29 15:07:03 by dgerard           #+#    #+#             */
+/*   Updated: 2017/07/07 08:20:10 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoini(const char *s1, const char *s2, size_t i)
+float			*ft_floatarraynew(size_t x)
 {
-	char	*fresh;
+	size_t	i;
+	float	*fresh;
 
-	fresh = ft_strjoin(s1, s2);
-	if (i == 1 || i == 3)
-		free((void *)s1);
-	if (i == 2 || i == 3)
-		free((void *)s2);
+	i = -1;
+	fresh = ft_memalloc(sizeof(float) * x);
+	while (i++ < x)
+		fresh[i] = 0;
 	return (fresh);
 }

@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 11:30:37 by dgerard           #+#    #+#             */
-/*   Updated: 2017/06/16 11:30:58 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/07/07 20:51:47 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int						num_len(int value, int base)
 
 char					base_assign(int num)
 {
-	int i;
-	char *alnums;
-			
-	i = 0;	
+	int		i;
+	char	*alnums;
+
+	i = 0;
 	alnums = "0123456789ABCDEF";
 	while (num-- > 0)
 		i++;
@@ -52,7 +52,7 @@ char					*ft_itoa_base(int value, int base)
 	isneg = 1;
 	size = num_len(value, base);
 	ret = (char *)malloc((sizeof(char) * size + 1));
-	ret[0] = (value < 0 && base == 10) ? '-' : '*'; 
+	ret[0] = (value < 0 && base == 10) ? '-' : '*';
 	ret[size] = '\0';
 	if (value == 0)
 		ret[0] = '0';
@@ -66,4 +66,3 @@ char					*ft_itoa_base(int value, int base)
 	}
 	return (ret);
 }
-

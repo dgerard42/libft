@@ -71,7 +71,8 @@ SRCS = 	ft_itoa.c\
 		ft_2dfreearray.c\
 		get_next_line.c\
 		ft_bitswap.c\
-		ft_itoa_base.c
+		ft_itoa_base.c\
+		ft_floatarraynew.c
 
 OFILES = $(SRCS:.c=.o)
 
