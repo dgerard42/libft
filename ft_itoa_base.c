@@ -12,25 +12,6 @@
 
 #include "libft.h"
 
-int						num_len(int value, int base)
-{
-	int len;
-
-	len = (value == 0) ? 1 : 0;
-	if (value < 0)
-	{
-		len = (base == 10) ? 2 : 1;
-		value = value / base;
-		value = -value;
-	}
-	while (value > 0)
-	{
-		value = value / base;
-		len++;
-	}
-	return (len);
-}
-
 char					base_assign(int num)
 {
 	int		i;
@@ -50,7 +31,7 @@ char					*ft_itoa_base(int value, int base)
 	char	*ret;
 
 	isneg = 1;
-	size = num_len(value, base);
+	size = ft_numlen(value, base);
 	ret = (char *)malloc((sizeof(char) * size + 1));
 	ret[0] = (value < 0 && base == 10) ? '-' : '*';
 	ret[size] = '\0';

@@ -76,7 +76,7 @@ char				*ft_strrchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_itoa(int n);
-int					ft_numlen(int n);
+int					ft_numlen(int value, int base);
 char				*ft_strnstr(const char *s1, const char *s2, size_t len);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				**ft_strsplit(const char *s, char c);

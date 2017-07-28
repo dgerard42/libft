@@ -49,7 +49,6 @@ SRCS = 	ft_itoa.c\
 		ft_striteri.c \
 		ft_strnstr.c \
 		ft_isprint.c \
-		ft_numlen.c \
 		ft_strcat.c \
 		ft_strjoin.c \
 		ft_strrchr.c \
@@ -72,6 +71,7 @@ SRCS = 	ft_itoa.c\
 		get_next_line.c\
 		ft_bitswap.c\
 		ft_itoa_base.c\
+		ft_numlen.c\
 		ft_floatarraynew.c
 
 OFILES = $(SRCS:.c=.o)

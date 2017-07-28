@@ -5,25 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/12 18:37:51 by dgerard           #+#    #+#             */
-/*   Updated: 2017/05/17 14:42:06 by dgerard          ###   ########.fr       */
+/*   Created: 2017/07/28 16:36:37 by dgerard           #+#    #+#             */
+/*   Updated: 2017/07/28 16:36:56 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_numlen(int n)
+int						ft_numlen(int value, int base)
 {
-	int place;
+	int len;
 
-	if (n <= 0)
-		place = 1;
-	else
-		place = 0;
-	while (n != 0)
+	len = (value == 0) ? 1 : 0;
+	if (value < 0)
 	{
-		place++;
-		n = (n / 10);
+		len = (base == 10) ? 2 : 1;
+		value = value / base;
+		value = -value;
 	}
-	return (place);
+	while (value > 0)
+	{
+		value = value / base;
+		len++;
+	}
+	return (len);
 }

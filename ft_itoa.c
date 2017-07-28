@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-char			*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	int		length;
 	int		isneg;
 	char	*fresh;
 
 	isneg = 1;
-	length = ft_numlen(n);
+	length = ft_numlen(n, 10);
 	if (!(fresh = malloc(sizeof(char) * (length + 1))))
 		return (NULL);
 	if (n == 0)
