@@ -72,7 +72,12 @@ SRCS = 	ft_itoa.c\
 		ft_bitswap.c\
 		ft_itoa_base.c\
 		ft_numlen.c\
-		ft_floatarraynew.c
+		ft_floatarraynew.c\
+		ft_power.c\
+		ft_numlen_ll.c\
+		ft_numlen_ull.c\
+		ft_power_ll.c\
+		ft_power_ull.c\
 
 OFILES = $(SRCS:.c=.o)
 

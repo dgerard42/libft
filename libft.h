@@ -98,5 +98,10 @@ int					get_next_line(const int fd, char **line);
 void				ft_bitswap(unsigned char *a, unsigned char *b, size_t size);
 char				*ft_itoa_base(int value, int base);
 float				*ft_floatarraynew(size_t x);
+int					ft_power(int nbr, int power);
+int					ft_numlen_ll(intmax_t value, int base);
+int					ft_numlen_ull(uintmax_t value, unsigned int base);
+intmax_t 			ft_power_ll(intmax_t nbr, intmax_t power);
+uintmax_t 			ft_power_ull(uintmax_t nbr, uintmax_t power);
 
 #endif
