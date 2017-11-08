@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/09 11:45:56 by dgerard           #+#    #+#             */
-/*   Updated: 2017/07/07 08:21:12 by dgerard          ###   ########.fr       */
+/*   Updated: 2017/10/27 19:25:48 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ float				*ft_floatarraynew(size_t x);
 int					ft_power(int nbr, int power);
 int					ft_numlen_ll(intmax_t value, int base);
 int					ft_numlen_ull(uintmax_t value, unsigned int base);
-intmax_t 			ft_power_ll(intmax_t nbr, intmax_t power);
-uintmax_t 			ft_power_ull(uintmax_t nbr, uintmax_t power);
+intmax_t			ft_power_ll(intmax_t nbr, intmax_t power);
+uintmax_t			ft_power_ull(uintmax_t nbr, uintmax_t power);
 
 #endif
