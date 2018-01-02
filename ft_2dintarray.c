@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/28 14:22:54 by dgerard           #+#    #+#             */
-/*   Updated: 2017/05/16 18:36:09 by dgerard          ###   ########.fr       */
+/*   Updated: 2018/01/02 13:01:48 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int			**ft_2dintarray(size_t y, size_t x)
 
 	subarray = 0;
 	fresh = ft_memalloc(sizeof(int *) * (y + 1));
-	while (subarray <= y)
+	while (subarray < y)
 	{
 		fresh[subarray] = ft_intarraynew(x);
 		subarray++;
