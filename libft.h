@@ -6,7 +6,7 @@
 /*   By: dgerard <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/09 11:45:56 by dgerard           #+#    #+#             */
-/*   Updated: 2017/10/27 19:25:48 by dgerard          ###   ########.fr       */
+/*   Updated: 2018/01/07 19:57:09 by dgerard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <inttypes.h>
 
 # define BUFF_SIZE 12
 # define MAX_FD 4096
